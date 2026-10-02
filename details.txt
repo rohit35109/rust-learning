@@ -1,4 +1,15 @@
-Rust Tools
+* Rust Tools
 1. Cargo - Dependency Manager Tool
 2. rustfmt - Used to format code in the RUST application throughout the teams
 3. Rust Langugage Server - IDE extension
+
+* Cargo
+
+- Create a project using cargo new PROJECT_NAME
+- This creates a folder src inside we see main.rs and also it creates cargo.toml file that is for the dependencies and project configuration
+- If you want to initialist in the existing folder move code into src and run cargo init this will create toml file
+- cargo new PROJECTNAME --vcs=git also creates git configuration or any other version control. You can also check cargo new --help to know more
+- cargo build: build is used to build and then you can either execute file directly using ./target/debug/hello_cargo on your own. 
+- cargo run: You can just run cargo run which checks for changes and builds and then runs it. 
+- cargo check: Cargo check on other hand will check if code can compile without generating any exeecutable file, if you have an habit of checking you can use this.
+- when you are project is ready to release use `cargo build --release`
