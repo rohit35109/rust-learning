@@ -1,0 +1,4 @@
+Rust Tools
+1. Cargo - Dependency Manager Tool
+2. rustfmt - Used to format code in the RUST application throughout the teams
+3. Rust Langugage Server - IDE extension
