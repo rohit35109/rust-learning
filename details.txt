@@ -13,3 +13,6 @@
 - cargo run: You can just run cargo run which checks for changes and builds and then runs it. 
 - cargo check: Cargo check on other hand will check if code can compile without generating any exeecutable file, if you have an habit of checking you can use this.
 - when you are project is ready to release use `cargo build --release`
+
+- crates.io is where all the library exists
+- cargo update - is used to update all the dependencies by ignoring cargo.lock file
