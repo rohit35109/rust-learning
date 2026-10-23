@@ -5,6 +5,7 @@ Main notes file. Topic-wise notes are in separate files, linked below.
 ## Topic Notes
 
 - [Guessing Game](guessing-game.md)
+- [Variables, Constants, Literals, and Number Overflow](variables-constants-numbers.md)
 
 ## Rust Tools
 
