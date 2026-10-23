@@ -1,36 +1,10 @@
-use std::io;
-use rand::prelude::*;
-use std::cmp::Ordering;
 
-// This is the main function that gets called first
+const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+
 fn main() {
-    println!("Welcome to the Guessing Game");
-
-    let secret_number = rand::rng().random_range(1..=100);
-
-    // println!("The secret number is {secret_number}");
-
-    loop {
-        println!("Please input your guess.");
-        let mut guess = String::new();
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-    
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue
-        };
-    
-        println!("You guessed: {guess}");
-    
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small."),
-            Ordering::Greater => println!("Too Large."),
-            Ordering::Equal => {
-                println!("You Win!!");
-                break;
-            }
-        }
-    }
+    let mut x = 5;
+    println!("The value of x is: {x}");
+    x = 6;
+    println!("The value of x is: {x}");
+    println!("The const value is: {THREE_HOURS_IN_SECONDS}");
 }
