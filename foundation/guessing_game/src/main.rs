@@ -124,6 +124,12 @@ fn main() {
     // Functions and Return Values
     let five = return_five();
     println!("{five}");
+
+    // Control Flow
+    condition_function(14);
+
+    // Repetations with loops
+    loops_function();
 }
 
 /**
@@ -140,4 +146,95 @@ fn parameterised_function(x: i32, c: char) {
  */
 fn return_five() -> i32 {
     5
+}
+
+/**
+ * Unlike JS or some other langugage Rust does not convert a non boolean value to Boolean.
+ * If condition expects the expression to be boolean
+ */
+fn condition_function(x: i32) {
+    if x < 5 {
+        println!("Condition was true");
+    } else if x > 5 && x < 15 {
+        println!("Condition is neither true or false");
+    } else {
+        println!("Condition was false");
+    }
+
+    let condition = true;
+    let number = if condition { 5 } else { 10 }; // value of the arms should be of same type else we get an error
+    println!("{number}")
+}
+
+/**
+ * 
+ */
+fn loops_function() {
+    // loop keyword
+    // loops until stopped using ctrl + c, and below code is commented so that we can execute other lines else this would never allow to go further
+    // loop {
+    //     println!("Again!");
+    // }
+
+    // break keyword
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+    println!("{result}");
+
+    // Disambiguating with loop labels
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("Remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        count += 1;
+    }
+    println!("End count {count}");
+
+    // streamlining conditional loops with while
+    let mut number = 3;
+    while number != 0 {
+        println!("{number}");
+        number -= 1;
+    }
+    println!("Out of while loop");
+
+    // Looping through a collection with for
+    let a = [10, 20, 30, 40, 50];
+    let mut index = 0;
+    while index < a.len() {
+        println!("the value is : {}", a[index]);
+        index += 1;
+    }
+
+    /*
+     * the above code is error prone, as if array size is reduced and forgot to change the manual size it would be an error 
+     * for this reason we have for - loop,
+     * also for is most used in rustacian, because it just allows you to do even things that we tried with while loop, given below
+     * For loop is efficient and good for performance as in while we also compare indexes on every loop
+     */
+    for element in a {
+        println!("{element}");
+    }
+
+    for number in (1..4).rev() {
+        println!("{number}");
+    }
+    println!("Out of for loop")
+
 }
