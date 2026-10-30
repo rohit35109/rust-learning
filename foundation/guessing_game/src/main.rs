@@ -1,4 +1,5 @@
 use std::io;
+mod ownership;
 
 // declaring constants
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
@@ -130,6 +131,9 @@ fn main() {
 
     // Repetations with loops
     loops_function();
+
+    // ownership
+    ownership::ownership_rules();
 }
 
 /**
